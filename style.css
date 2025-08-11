@@ -1,16 +1,17 @@
 /* Global Styles */
 :root {
-    --primary-color: #3498db;
+    --primary-color: #2980b9;
     --secondary-color: #2c3e50;
     --accent-color: #e74c3c;
     --light-color: #ecf0f1;
     --dark-color: #2c3e50;
-    --text-color: #333;
-    --text-light: #777;
+    --text-color: #2c3e50;
+    --text-light: #555;
     --white: #fff;
     --black: #000;
     --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+    --focus-color: #3498db;
 }
 
 * {
@@ -44,6 +45,34 @@ ul {
 img {
     max-width: 100%;
     height: auto;
+    display: block;
+}
+
+/* Optimize images for performance */
+img[loading="lazy"] {
+    transition: opacity 0.3s;
+}
+
+img[loading="lazy"]:not([src]) {
+    opacity: 0;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--dark-color);
+    color: var(--white);
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
 }
 
 .container {
@@ -69,6 +98,11 @@ img {
     background-color: #2980b9;
     transform: translateY(-3px);
     box-shadow: var(--box-shadow);
+}
+
+.btn:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
 }
 
 .btn-outline {
@@ -169,6 +203,14 @@ nav ul li a:hover::after {
 .hamburger {
     display: none;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+
+.hamburger:focus {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 2px;
 }
 
 .hamburger span {
@@ -258,6 +300,69 @@ nav ul li a:hover::after {
 
 .about-text p {
     margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* Personal Profile Section */
+.personal-profile {
+    background-color: rgba(52, 152, 219, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.personal-profile h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.personal-profile p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 0;
+}
+
+/* Key Skills Section */
+.key-skills {
+    background-color: rgba(46, 204, 113, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 4px solid #2ecc71;
+}
+
+.key-skills h3 {
+    color: #2ecc71;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 12px;
+}
+
+.skills-list li {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.skills-list li i {
+    color: #2ecc71;
+    margin-right: 12px;
+    width: 20px;
     font-size: 1.1rem;
 }
 
@@ -542,6 +647,23 @@ footer {
     .contact-form {
         padding-right: 0;
         margin-bottom: 40px;
+    }
+
+    /* Mobile responsive for personal profile and key skills */
+    .personal-profile,
+    .key-skills {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+
+    .skills-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .personal-profile h3,
+    .key-skills h3 {
+        font-size: 1.2rem;
     }
     
     .hero-content {

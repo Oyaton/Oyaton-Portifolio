@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,48 +9,66 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
         <div class="container">
-            <div class="logo">OW</div>
-            <nav>
+            <div class="logo" aria-label="Oyara Washington Logo">OW</div>
+            <nav role="navigation" aria-label="Main navigation">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" aria-current="page">Home</a></li>
                     <li><a href="about.html">About Me</a></li>
                     <li><a href="skills.html">Skills</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">My Contacts</a></li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Oyara Washington</h1>
-                <h2>IT Professional & Web Developer</h2>
-                <p>Bachelor of Information Technology | Muni University</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn">View My Work</a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+    <main>
+        <section id="main-content" class="hero" role="main">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Oyara Washington</h1>
+                    <h2>IT Professional & Web Developer</h2>
+                    <p>Bachelor of Information Technology | Muni University</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn" aria-label="View my work section">View My Work</a>
+                        <a href="#contact" class="btn btn-outline" aria-label="Go to contact section">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="Images/IMG-20250428-WA0005.jpg" alt="Professional photo of Oyara Washington, IT Professional and Web Developer" id="profile-img">
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="Images/IMG-20250428-WA0005.jpg" alt="Oyara Washington" id="profile-img">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
+        <section id="about" class="about" aria-labelledby="about-title">
+            <div class="container">
+                <h2 id="about-title" class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
+                    <div class="personal-profile">
+                        <h3>Personal Profile</h3>
+                        <p>I am a dedicated IT professional with strong experience in system support, data management, and digital tools...</p>
+                    </div>
+
+                    <div class="key-skills">
+                        <h3>Key Skills</h3>
+                        <ul class="skills-list">
+                            <li><i class="fas fa-chart-line"></i> Data Collection & Analysis</li>
+                            <li><i class="fas fa-database"></i> Database Management</li>
+                            <!-- ... more skills -->
+                        </ul>
+                    </div>
+
                     <p>Hello! I'm Oyara Washington, a passionate Information Technology professional with a Bachelor's degree from Muni University.</p>
                     <p>I specialize in web development, system administration, and IT solutions that bridge the gap between technology and business needs.</p>
                     <p>My academic journey at Muni University equipped me with strong technical skills and problem-solving abilities that I apply to every project I undertake.</p>
@@ -66,7 +85,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="Images/IMG-20250508-WA0032.jpg" alt="Oyara Washington working">
+                    <img src="Images/IMG-20250508-WA0032.jpg" alt="Oyara Washington in a professional setting, demonstrating technical expertise" loading="lazy">
                 </div>
             </div>
         </div>
@@ -79,32 +98,62 @@
                 <div class="skill-item">
                     <i class="fas fa-code"></i>
                     <h3>Web Development</h3>
-                    <p>HTML, CSS, JavaScript, React, Node.js</p>
+                    <p>HTML, CSS, JavaScript, React, Node.js, Computer Web Development</p>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-server"></i>
                     <h3>System Administration</h3>
-                    <p>Linux, Windows Server, Networking</p>
+                    <p>Linux, Windows Server, Networking, User & Infrastructure Support</p>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-database"></i>
-                    <h3>Database Management</h3>
-                    <p>MySQL, MongoDB, SQL Server</p>
+                    <h3>Database Design & Management</h3>
+                    <p>MySQL, MongoDB, SQL Server, Database Design & Architecture</p>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-mobile-alt"></i>
-                    <h3>Mobile Development</h3>
-                    <p>React Native, Flutter</p>
+                    <h3>Mobile Computing & Apps</h3>
+                    <p>React Native, Flutter, Mobile Application Development</p>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-cloud"></i>
                     <h3>Cloud Computing</h3>
-                    <p>AWS, Azure, Google Cloud</p>
+                    <p>AWS, Azure, Google Cloud, IT Architecture</p>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-shield-alt"></i>
                     <h3>Cyber Security</h3>
                     <p>Ethical Hacking, Network Security</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>IT Project Support</h3>
+                    <p>Project Management, Technical Support, System Implementation</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3>ERP/CRM Systems</h3>
+                    <p>Enterprise Resource Planning, Customer Relationship Management</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Electronic Commerce</h3>
+                    <p>E-commerce Development, Online Payment Systems, Digital Marketing</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>ICT Marketing</h3>
+                    <p>Marketing of ICT Products, Digital Strategy, Technology Promotion</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>ICT Training</h3>
+                    <p>Technology Training, Knowledge Transfer, Capacity Building</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-users"></i>
+                    <h3>Work-Place Soft Skills</h3>
+                    <p>Communication, Teamwork, Problem-Solving, Leadership</p>
                 </div>
             </div>
         </div>
@@ -115,29 +164,29 @@
             <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="Images/IMG-20250508-WA0027.jpg" alt="Project 1">
+                    <img src="Images/IMG-20250508-WA0027.jpg" alt="Screenshot of University Management System interface showing student dashboard" loading="lazy">
                     <div class="project-info">
                         <h3>University Management System</h3>
                         <p>A comprehensive system for managing student records, courses, and faculty information.</p>
                         <div class="project-links">
-                            <a href="#" class="btn btn-small">View Demo</a>
-                            <a href="#" class="btn btn-small btn-outline">Code</a>
+                            <a href="university-demo.html" class="btn btn-small">View Demo</a>
+                            <a href="university-code.html" class="btn btn-small btn-outline">Code</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="Images/IMG-20250428-WA0005.jpg" alt="Project 2">
+                    <img src="Images/IMG-20250428-WA0005.jpg" alt="E-commerce platform homepage showing product catalog and shopping features" loading="lazy">
                     <div class="project-info">
                         <h3>E-commerce Platform</h3>
                         <p>Full-featured online shopping platform with payment integration and inventory management.</p>
                         <div class="project-links">
-                            <a href="#" class="btn btn-small">View Demo</a>
-                            <a href="#" class="btn btn-small btn-outline">Code</a>
+                            <a href="ecommerce-demo.html" class="btn btn-small">View Demo</a>
+                            <a href="ecommerce-code.html" class="btn btn-small btn-outline">Code</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="Images/IMG-20250428-WA0005.jpg" alt="Project 3">
+                    <img src="Images/IMG-20250428-WA0005.jpg" alt="Monsignor Bala Secondary School website homepage featuring school events and announcements" loading="lazy">
                     <div class="project-info">
                         <h3>Monsignor Bala SS Website</h3>
                         <p>A comprehensive website for managing school events, activities, and community engagement.</p>
@@ -157,37 +206,46 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <p><i class="fas fa-envelope"></i> oyarawashington@example.com</p>
+                    <p><i class="fas fa-envelope"></i> oyarawashington@gmail.com</p>
                     <p><i class="fas fa-phone"></i> +256 758499839</p>
 
                     <p><i class="fas fa-map-marker-alt"></i> Arua, Uganda</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/in/oyara-washington" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/oyara-washington" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/oyara_washington" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/oyara_washington" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
                 <form class="contact-form">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Subject">
+                        <input type="text" name="subject" placeholder="Subject" aria-label="Subject">
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" required></textarea>
+                        <textarea name="message" placeholder="Your Message" required aria-label="Your Message" rows="5"></textarea>
                     </div>
                     <button type="submit" class="btn">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
+    </main>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <p>&copy; <span id="year"></span> Oyara Washington. All rights reserved.</p>
         </div>
